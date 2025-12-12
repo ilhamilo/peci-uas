@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sejarah Benteng Orange — Modern UI</title>
+<style>
+    @font-face {
+        font-family: 'KOMTIT';
+        src: url('IMPACT__.ttf') format('truetype');
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background: #0f0f0f;
+        color: #fff;
+    }
+
+    /* Smooth fade-in animation */
+    * {
+        scroll-behavior: smooth;
+    }
+
+    header {
+        padding: 20px;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        animation: fadeDown 1s ease;
+    }
+
+    @keyframes fadeDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    header h1 {
+        font-family: 'KOMTIT', sans-serif;
+        font-size: 34px;
+        margin: 0;
+        letter-spacing: 2px;
+        color: #f6c453;
+    }
+
+    /* HERO SECTION PARALLAX */
+    .hero {
+        width: 100%;
+        height: 360px;
+        background: url('Benteeng.jpg') center/cover fixed no-repeat;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 4px solid #f6c453;
+        overflow: hidden;
+    }
+
+    .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero h2 {
+        position: relative;
+        font-size: 40px;
+        font-weight: 600;
+        animation: fadeIn 1.8s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* TOGGLE BUTTON */
+    button {
+        margin: 25px auto;
+        padding: 14px 30px;
+        background: linear-gradient(135deg, #f6c453, #dba33b);
+        border: none;
+        border-radius: 12px;
+        font-size: 17px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+        display: block;
+        color: #000;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    button:hover {
+        transform: scale(1.07);
+        background: linear-gradient(135deg, #ffd995, #f6c453);
+    }
+
+    /* CONTENT */
+    .container {
+        max-width: 1050px;
+        margin: 30px auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    /* CARD 3D EFFECT */
+    .card {
+        background: rgba(255, 255, 255, 0.07);
+        border-radius: 18px;
+        padding: 25px;
+        backdrop-filter: blur(14px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+        transition: 0.45s ease;
+        transform-style: preserve-3d;
+        animation: fadeIn 1.2s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+    }
+
+    .card-title {
+        font-family: 'KOMTIT';
+        font-size: 28px;
+        color: #f6c453;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    /* IMAGE CIRCLE + GLOW */
+    .circle-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 20px auto;
+        border: 4px solid #f6c453;
+        filter: drop-shadow(0 0 10px #f6c453);
+        transition: 0.4s ease;
+    }
+
+    .circle-img:hover {
+        transform: scale(1.08);
+        filter: drop-shadow(0 0 18px #ffdd9e);
+    }
+
+    .circle-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* TEXT AREA */
+    .text-box {
+        background: rgba(255, 255, 255, 0.12);
+        padding: 18px;
+        border-radius: 12px;
+        line-height: 1.7;
+        font-size: 16px;
+        max-height: 220px;
+        overflow-y: auto;
+        transition: 0.3s ease;
+    }
+
+    .text-box:hover {
+        background: rgba(255, 255, 255, 0.17);
+    }
+
+    footer {
+        text-align: center;
+        padding: 25px;
+        background: rgba(0,0,0,0.55);
+        margin-top: 60px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1 id="header-text">Selamat datang di sejarah benteng orange</h1>
+</header>
+
+<div class="hero">
+    <h2>Warisan Sejarah Dalam Kejayaan Masa Lalu</h2>
+</div>
+
+<button onclick="toggleTranslation()">🌐 Ganti Bahasa</button>
+
+<div class="container">
+
+    <div class="card">
+        <div class="card-title">AWAL MULA SEJARAH</div>
+        <div class="circle-img"><img src="Gambar1BentengOrange.jpg" /></div>
+        <div class="text-box">
+            <p id="text1-id">Benteng Oranje dibangun oleh VOC pada tahun 1607 sebagai pusat kekuasaan kolonial Belanda di Ternate. Benteng ini awalnya bernama Benteng Malayu sebelum akhirnya berganti nama menjadi “Oranje” sebagai bentuk penghormatan kepada Wangsa Oranye di Belanda. Pembangunannya memiliki tujuan strategis untuk menguasai perdagangan rempah–rempah, terutama cengkih, yang saat itu menjadi komoditas paling berharga di dunia. Struktur awal benteng dirancang untuk menahan serangan laut sekaligus menjadi pusat administrasi VOC, menandai awal dari masa pengaruh kuat Belanda di Kepulauan Maluku.</p>
+            <p id="text1-en" style="display:none;">The Orange Fort in Ternate...</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">PERKEMBANGAN SEIRING WAKTU</div>
+        <div class="circle-img"><img src="Gambar2BentengOrange.jpg" /></div>
+        <div class="text-box">
+            <p id="text2-id">Seiring berjalannya waktu, Benteng Oranje berkembang menjadi pusat pemerintahan dan aktivitas perdagangan VOC di kawasan ini. Belanda terus memperkuat struktur pertahanannya dengan memperluas area benteng, menambah ruang penyimpanan senjata, serta membangun barak pasukan. Aktivitas diplomatik antara VOC dan Kesultanan Ternate juga banyak berlangsung di dalam benteng ini, menjadikannya tempat penting dalam hubungan politik, ekonomi, dan militer antara bangsa Eropa dan kerajaan lokal. Keberadaannya turut membentuk dinamika kekuasaan di Maluku Utara sepanjang abad ke-17 hingga abad ke-19.</p>
+            <p id="text2-en" style="display:none;">Over time, the Orange Fort...</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">PUNCAK SEJARAH</div>
+        <div class="circle-img"><img src="Gambar3BentengOrange.jpg" /></div>
+        <div class="text-box">
+            <p id="text3-id">Benteng Oranje mencapai masa kejayaan pada puncak aktivitas VOC ketika menjadi salah satu benteng terpenting di kawasan timur Nusantara. Dari sinilah Belanda mengatur monopoli perdagangan rempah dan menjalankan berbagai operasi militernya. Namun seiring melemahnya VOC dan bergantinya kekuasaan kolonial, fungsi benteng berubah—dari pusat militer menjadi area administrasi, hingga akhirnya menjadi situs bersejarah yang dilestarikan. Kini benteng ini menjadi saksi bisu perjalanan panjang sejarah Maluku, menyimpan cerita tentang penjajahan, perdagangan rempah, perlawanan rakyat, dan perubahan zaman.</p>
+            <p id="text3-en" style="display:none;">The Orange Fort reached its peak...</p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>Dibuat oleh: <strong>Muhammad Ilham Maudjud</strong></p>
+</footer>
+
+<script>
+function toggleTranslation() {
+    let ids = ['1', '2', '3'];
+    ids.forEach(num => {
+        let idText = document.getElementById(`text${num}-id`);
+        let enText = document.getElementById(`text${num}-en`);
+        if (idText.style.display === "none") {
+            idText.style.display = "block";
+            enText.style.display = "none";
+        } else {
+            idText.style.display = "none";
+            enText.style.display = "block";
+        }
+    });
+
+    const headerText = document.getElementById('header-text');
+    headerText.innerText =
+        headerText.innerText === "Selamat datang di sejarah benteng orange"
+        ? "Welcome to the history of the Orange Fort"
+        : "Selamat datang di sejarah benteng orange";
+}
+</script>
+
+</body>
+</html>
